@@ -21,8 +21,8 @@ export class ModalTemplateComponent2 implements OnInit, OnDestroy {
 
     // ensure id attribute exists
     if (!this.id) {
-        console.error('modal must have an id');
-        return;
+      console.error('modal must have an id');
+      return;
     }
 
     // move element to bottom of page (just before </body>) so it can be displayed above everything else

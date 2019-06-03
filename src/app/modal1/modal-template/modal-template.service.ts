@@ -5,7 +5,6 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ModalTemplateService1 {
-  private modals: any[] = [];
   private closeEventSubject = new Subject<string>();
   public closeEventObservable$ = this.closeEventSubject.asObservable();
   constructor() { }
