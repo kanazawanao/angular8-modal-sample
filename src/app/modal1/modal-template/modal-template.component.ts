@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ModalTemplateService1 } from './modal-template.service';
-import { ModalTemplate } from './modal-template.class';
 
 @Component({
   selector: 'app-modal-template1',
@@ -10,20 +9,19 @@ import { ModalTemplate } from './modal-template.class';
 export class ModalTemplateComponent1 implements OnInit, OnDestroy {
   @Input() public pageName = '';
   constructor(
-    private modalService: ModalTemplateService1,
-    private project: ModalTemplate) {}
+    private modalService: ModalTemplateService1) {}
 
   ngOnInit() {
-    this.pageName = this.project.pageName;
+    this.pageName = 'test';
   } 
   ngOnDestroy() {
     // モーダルダイアログが閉じたタイミングで出力される
     console.log('destroyed');
   }
   public onClick($event) {
-    this.notifyCloseModal();
+    this.notifyCloseModal('aaa');
   }
-  private notifyCloseModal() {
-    this.modalService.requestCloseModal();
+  private notifyCloseModal(val: string) {
+    this.modalService.requestCloseModal(val);
   }
 }

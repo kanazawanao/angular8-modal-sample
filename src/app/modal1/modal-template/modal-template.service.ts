@@ -8,7 +8,7 @@ export class ModalTemplateService1 {
   private closeEventSubject = new Subject<string>();
   public closeEventObservable$ = this.closeEventSubject.asObservable();
   constructor() { }
-  public requestCloseModal() {
-    this.closeEventSubject.next();
+  public requestCloseModal(val: string) {
+    this.closeEventSubject.next(val);
   }
 }
