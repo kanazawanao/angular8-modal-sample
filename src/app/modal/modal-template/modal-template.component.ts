@@ -1,11 +1,14 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-modal-template',
   templateUrl: './modal-template.component.html',
   styleUrls: ['./modal-template.component.css']
 })
-export class ModalTemplateComponent implements OnInit, OnDestroy {
+export class ModalTemplateComponent implements OnInit {
+
+  @Input()
+  modalContent: string;
 
   @Output()
   finishEvent: EventEmitter<string> = new EventEmitter<string>();
@@ -13,10 +16,8 @@ export class ModalTemplateComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   } 
-  ngOnDestroy() {
-    console.log('destroyed');
-  }
-  public onClick($event) {
+
+  public onClick() {
     this.finishEvent.emit('finish!');
   }
 }

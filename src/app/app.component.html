@@ -3,7 +3,8 @@
 </div>
 <div *ngIf="showModal">
 <app-modal-template
-  #dynamic
+  [modalContent]="modalContent"
   (finishEvent)="finishEvent($event)">  
 </app-modal-template>
 </div>
+{{closeTest}}

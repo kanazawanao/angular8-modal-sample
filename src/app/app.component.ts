@@ -1,5 +1,4 @@
-import { Component, OnInit, ComponentFactory, ViewContainerRef, ComponentFactoryResolver, ViewChild } from '@angular/core';
-import { ModalTemplateComponent } from './modal/modal-template/modal-template.component';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -8,14 +7,15 @@ import { ModalTemplateComponent } from './modal/modal-template/modal-template.co
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  factory: ComponentFactory<ModalTemplateComponent>;
   showModal: boolean;
-
+  modalContent: string;
+  closeTest: string;
   constructor(
   ){}
 
   ngOnInit() {
     this.showModal = false;
+    this.modalContent = 'modal sample';
   }
 
   onClick() {
@@ -24,6 +24,6 @@ export class AppComponent implements OnInit {
 
   finishEvent(val: string) {
     this.showModal = false;
-    console.log(val);
+    this.closeTest = val;
   }
 }
