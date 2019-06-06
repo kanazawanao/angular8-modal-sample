@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     this.modalContent = 'modal sample';
   }
 
-  onClick() {
+  onClick(e) {
     this.showModal = true;
   }
 
