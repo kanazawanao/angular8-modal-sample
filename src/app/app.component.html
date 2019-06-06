@@ -1,10 +1,16 @@
 <div class="footer">
-  <input id="footer_button" type="button" value="open modal" (click)="onClick($event);">
+  <input
+    id="footer_button"
+    type="button"
+    value="open modal"
+    (click)="onClick($event)"
+  />
 </div>
 <div *ngIf="showModal" class="overlay">
-<app-modal-template
-  [modalContent]="modalContent"
-  (finishEvent)="finishEvent($event)">  
-</app-modal-template>
+  <app-modal-template
+    [modalContent]="modalContent"
+    (finishEvent)="finishEvent($event)"
+  >
+  </app-modal-template>
 </div>
-{{closeTest}}
+{{ closeTest }}

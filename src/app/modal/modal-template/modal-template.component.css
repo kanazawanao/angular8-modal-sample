@@ -1,12 +1,12 @@
 .modal {
   width: 30%;
-  height:30%;
+  height: 30%;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: rgb(241, 245, 247);
-  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
   border: solid 1px rgb(0, 0, 0);
 }
 

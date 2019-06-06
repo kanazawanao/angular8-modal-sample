@@ -1,4 +1,13 @@
-import { Component, OnInit, Output, EventEmitter, Input, HostListener, ElementRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  Input,
+  HostListener,
+  ElementRef,
+  ViewChild
+} from '@angular/core';
 
 @Component({
   selector: 'app-modal-template',
@@ -19,7 +28,7 @@ export class ModalTemplateComponent implements OnInit {
 
   ngOnInit() {
     this.drag = false;
-  } 
+  }
 
   public onClick() {
     this.finishEvent.emit('finish!');
@@ -34,9 +43,11 @@ export class ModalTemplateComponent implements OnInit {
   }
 
   @HostListener('document:mousemove', ['$event']) onMouseMove(e: MouseEvent) {
-    if(this.drag){
-      this.modalRef.nativeElement.style.top = this.modalRef.nativeElement.offsetTop + e.movementY + 'px';
-      this.modalRef.nativeElement.style.left = this.modalRef.nativeElement.offsetLeft + e.movementX + 'px';
+    if (this.drag) {
+      this.modalRef.nativeElement.style.top =
+        this.modalRef.nativeElement.offsetTop + e.movementY + 'px';
+      this.modalRef.nativeElement.style.left =
+        this.modalRef.nativeElement.offsetLeft + e.movementX + 'px';
     }
   }
 }
