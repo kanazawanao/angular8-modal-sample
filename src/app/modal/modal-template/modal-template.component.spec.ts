@@ -21,4 +21,47 @@ describe('ModalTemplateComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('ngOnInit Test', () => {
+    const fixture = TestBed.createComponent(ModalTemplateComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.ngOnInit();
+    expect(app.drag).toEqual(false);
+  });
+
+  it('onClick Test', () => {
+    const fixture = TestBed.createComponent(ModalTemplateComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.onClick();
+  });
+
+  it('onMouseDown Test', () => {
+    const fixture = TestBed.createComponent(ModalTemplateComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.onMouseDown();
+    expect(app.drag).toEqual(true);
+  });
+
+  it('onMouseUp Test', () => {
+    const fixture = TestBed.createComponent(ModalTemplateComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.onMouseUp();
+    expect(app.drag).toEqual(false);
+  });
+
+  it('onMouseMove Test1', () => {
+    const fixture = TestBed.createComponent(ModalTemplateComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.drag = false;
+    let event: MouseEvent = new MouseEvent('mousemove');
+    app.onMouseMove(event);
+  });
+
+  it('onMouseMove Test2', () => {
+    const fixture = TestBed.createComponent(ModalTemplateComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.drag = true;
+    let event: MouseEvent = new MouseEvent('mousemove');
+    app.onMouseMove(event);
+  });
 });

@@ -34,11 +34,11 @@ export class ModalTemplateComponent implements OnInit {
     this.finishEvent.emit('finish!');
   }
 
-  @HostListener('mousedown', ['$event']) onMouseDown(event: MouseEvent) {
+  @HostListener('mousedown') onMouseDown() {
     this.drag = true;
   }
 
-  @HostListener('mouseup', ['$event']) onMouseUp(event: MouseEvent) {
+  @HostListener('mouseup') onMouseUp() {
     this.drag = false;
   }
 
