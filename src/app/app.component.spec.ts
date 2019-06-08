@@ -20,4 +20,26 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('angular8-modal-sample');
   });
+
+  it('ngOnInit Test', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.ngOnInit();
+    expect(app.modalContent).toEqual('modal sample');
+  });
+
+  it('showModal Test', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.onClick();
+    expect(app.showModal).toEqual(true);
+  });
+
+  it('finishEvent Test', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.finishEvent('test');
+    expect(app.showModal).toEqual(false);
+    expect(app.closeTest).toEqual('test');
+  });
 });
